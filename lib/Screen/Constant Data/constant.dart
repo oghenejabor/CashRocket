@@ -22,7 +22,7 @@ String spinFee = "0";
 int maxFailedLoadAttempts = 3;
 
 ///___________Purchase_code_______________________________
-//String purchaseCode = 'be452274-fbf2-458a-9d3b-0ca0a82ccdba';
+String purchaseCode = 'be452274-fbf2-458a-9d3b-0ca0a82ccdba';
 
 // Pollfish basic configuration options
 const String androidApiKey = '363e1f40-882b-4934-aaff-20d9fa489b41';
