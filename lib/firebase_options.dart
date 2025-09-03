@@ -16,17 +16,29 @@ import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb, Tar
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+            'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+              'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+              'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
-        return windows;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+              'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -48,29 +60,6 @@ class DefaultFirebaseOptions {
     storageBucket: 'exnay-a6d8d.firebasestorage.app',
   );
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBe1LD0CsflOniBJQI44qDtzvPwpJl4OQY',
-    appId: '1:881157721637:web:23f6c2fce4707e37ec39cc',
-    messagingSenderId: '881157721637',
-    projectId: 'exnay-a6d8d',
-    authDomain: 'exnay-a6d8d.firebaseapp.com',
-    databaseURL: 'https://exnay-a6d8d-default-rtdb.firebaseio.com',
-    storageBucket: 'exnay-a6d8d.firebasestorage.app',
-    measurementId: 'G-5YYRSP9VT7',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCn1bx_Q1SoxGyICYaIWeWgY1UJ88cZyXA',
-    appId: '1:881157721637:ios:4b01f6edc42ff964ec39cc',
-    messagingSenderId: '881157721637',
-    projectId: 'exnay-a6d8d',
-    databaseURL: 'https://exnay-a6d8d-default-rtdb.firebaseio.com',
-    storageBucket: 'exnay-a6d8d.firebasestorage.app',
-    androidClientId: '881157721637-8kdhnu5vpvts77jua3htce8vl1dai22a.apps.googleusercontent.com',
-    iosClientId: '881157721637-b35bsog4sm2ao5gpoivsstffiq5d06v8.apps.googleusercontent.com',
-    iosBundleId: 'app.ngawinapp.ios',
-  );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCn1bx_Q1SoxGyICYaIWeWgY1UJ88cZyXA',
     appId: '1:881157721637:ios:4b01f6edc42ff964ec39cc',
@@ -82,16 +71,4 @@ class DefaultFirebaseOptions {
     iosClientId: '881157721637-b35bsog4sm2ao5gpoivsstffiq5d06v8.apps.googleusercontent.com',
     iosBundleId: 'app.ngawinapp.ios',
   );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBe1LD0CsflOniBJQI44qDtzvPwpJl4OQY',
-    appId: '1:881157721637:web:e22bca27bc666ef1ec39cc',
-    messagingSenderId: '881157721637',
-    projectId: 'exnay-a6d8d',
-    authDomain: 'exnay-a6d8d.firebaseapp.com',
-    databaseURL: 'https://exnay-a6d8d-default-rtdb.firebaseio.com',
-    storageBucket: 'exnay-a6d8d.firebasestorage.app',
-    measurementId: 'G-QVFCQTBN93',
-  );
-
 }
